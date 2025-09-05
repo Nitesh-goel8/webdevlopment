@@ -1,0 +1,92 @@
+to initailise the projext using npm initailise
+--will create package.json , that will include all the dependencies jinpe mera prejct depend krta hai 
+
+2. install Express package , go to Express documentation
+or go to npm and search express 
+
+>npm i express
+it will install entire code of express and on wahtever package express is depend on
+
+
+//how to build a server 
+!st part
+
+learning to build server ?
+First work i can see is see the documentation 
+
+when we create a server , then we will run a server , server is a computer that runs continuosly 
+
+app.listen(3000) this will start the server 
+3000 is the port number  , there are many slot for examle power charginfg port and usb port that are hardware part , then we have some software port to run , these are virtual port
+
+for exmaple if at port 4445 my whatsapp app is running , these are mainly gui based  , 
+
+app.listen(3000)
+the app is runnig at local host 3000
+
+the app.js is the infinite loop that will listen to the incoming request 
+
+local host and 127.0.0.1 is the same thing 
+
+3.)
+Request k badle Resonse bhejna is mandatory , but waht to send in the response 
+
+
+there is a client(browser) and a server(app.js)
+the cycle between request and respone is client server Architecture 
+
+yah par get type ki request aati hai to kya krna hota hai mention krna pdega
+Status 404 not found is shown when we have not defined waht to do after / path
+
+
+3.) app.get(path , callback);
+yha pr jjo path hga uske match krne pr hi calback function chlega
+callback - (req, res)=>{
+    console.log(req);//toh req client jo bhejta hai uske sath kuch imp information bhai atti hai 
+
+}
+
+4.) on CHANGING  even a single charachter in out file app.js we will have to restart th e==e server
+--close the server : ctrl+c 
+-start it again : node app.js
+
+5.) to send response back , er have to write 
+-res.send('hello world')
+jisne request kri use reponse mil jayga"hello world 
+
+
+bar bar server ko start restart krne se ahca hai use 
+nodemon
+it will restart automatically 
+
+--if i want to send data to the server 
+to send data there are two appoches 
+1)params 
+2) query parameter
+
+params = when request gone then it will carray a object with it 
+app.get('/greet/:name')
+'/grettings/aman'
+
+then name : aman 
+name the key and aman is the value 
+
+app.get("/greet/:name", (req, res) => {
+    console.log(req.params);
+    res.send(`aur , kya hal chal hai? ${req.params.name}`);
+});
+
+
+by using query parametern 
+
+./greet/name?aman
+
+app.get('/bye', (req, res)=>{
+    res.send(`aur, chalo milte hai badd mei ${req.query.name} from ${req.query.city}`)
+});
+
+8. <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    -Both link and script tags send the get request on the mentioned src or href,
+    for the obvious reason to get the data from those links
